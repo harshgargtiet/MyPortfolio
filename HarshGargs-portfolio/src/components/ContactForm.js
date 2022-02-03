@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+// import emailjs from 'emailjs-com';
+// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/newline-after-import
+// eslint-disable-next-line import/no-unresolved
 
 const FormStyle = styled.form`
   width: 100%;
@@ -43,6 +47,21 @@ export default function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  // function sendEmail(e) {
+  //   e.preventDefault();
+  //   emailjs
+  //     .sendForm(
+  //       'service_ct1fvme',
+  //       'template_13pcg5h',
+  //       e.target,
+  //       'user_9f2iD2nF8y3PsbcbRCqNw'
+  //     )
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
+
   return (
     <>
       <FormStyle>
@@ -84,6 +103,26 @@ export default function ContactForm() {
         </div>
         <button type="submit">Send</button>
       </FormStyle>
+      {/* <Helmet>
+        <script src="https://smtpjs.com/v3/smtp.js"> </script>
+        <script>
+          function sendEmail(){' '}
+          {
+            // eslint-disable-next-line no-undef
+            email
+              .send({
+                Host: 'smtp.gmail.com',
+                Username: 'harshgargthapar@gmail.com',
+                Password: '9501761082hgt',
+                To: 'harshgargthapar@gmail.com',
+                From: document.getElementById('email'),
+                Subject: 'This is the subject',
+                Body: 'And this is the body',
+              })
+              .then((err) => alert(err))
+          }
+        </script>
+      </Helmet> */}
     </>
   );
 }
